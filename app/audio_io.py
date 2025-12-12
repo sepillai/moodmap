@@ -19,3 +19,9 @@ async def save_and_convert_audio(file: UploadFile):
     audio.export(wav_output_path, format = "wav")
 
     return wav_output_path
+
+def get_audio_file_path(track_id: str) -> str:
+    wav_path = os.path.join(AUDIO_DIR, f"{track_id}.wav")
+    if not os.path.exists(wav_path):
+        raise FileNotFoundError(f"Audio file not found: {wav_path}")
+    return wav_path
