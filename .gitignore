@@ -19,3 +19,8 @@ embeddings/glove.6B.zip
 
 # OS files
 .DS_Store
+
+# Database
+data/
+*.db
+*.sqlite

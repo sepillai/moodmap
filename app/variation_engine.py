@@ -112,7 +112,6 @@ def apply_compression(input_path, amount, output_path):
     if not os.path.exists(input_path):
         raise FileNotFoundError(f"Input file not found: {input_path}")
     
-    # Skip compression if amount is too small
     if float(amount) < 0.01:
         # Just copy input to output
         shutil.copy2(input_path, output_path)
